@@ -14,7 +14,7 @@ image_prefix: /src/img/Network/tcp-congestion-control/
 ## 拥塞控制介绍
 
 ### 概念介绍
-![image](../src/img/Network/tcp-congestion-control/tcp.png)
+![image](../src/img/Network/tcp-congestion-control/tcp.png)  
 TCP发送数据的过程中，如果发送端发送数据过慢， 会浪费网络带宽，影响应用进程间的通信，甚至导致应用进程间通信失败。 所以，我们希望尽快将数据传送给接收端。 但如果发送端把数据发得过快，接收端就可能来不及接收，从而造成数据丢失。 **拥塞控制算法通过一套复杂的机制来控制 TCP 报文发送端可发送报文的数量， 让发送方的发送速率不要太快，要让接收方来得及接收，同时也不能发送太慢，以免浪费带宽、影响业务。** 从而实现在无丢包或者少丢包的情况下，最大化地利用网络带宽，提高传输效率；尽快将 TCP 报文送达接收端，降低传输时延。
 
 ### 指标
@@ -85,5 +85,5 @@ BBR 通过以下四个状态，来交替循环探测，得出 BtlBw 和 RTprop�
     进入 RTprop 状态后， BBR 将 CWND 拥塞窗口 CWND 减小到 4 并持续 200 毫秒，通过断崖式减少发包来清空链路中缓存的报文，以便探测新的 RTprop。
 
 ### 算法原理示意图
-![image](../src/img/Network/tcp-congestion-control/bbr.png)
-BBR 经过 StartUp 和 Drain 阶段后，进入相对平稳的发包阶段，相同时间段内 BBR的吞吐量要大于 Reno 和 BIC。 当网络传输能力提高，最佳拥塞窗口 CWND 从 30 个 MSS 提升到48 个 MSS， BIC 最少只需 5 个 RTT 即可达到最佳拥塞窗口 CWND，而 BBR 需要 7 个 RTT，拥塞窗口 CWND 才上升到 1.25*30=37.5（取 37 个 MSS）， BBR 再经过 8 个 RTT，拥塞窗口 CWND 上升到 1.25*37=46.25（取 46 个 MSS）。
+![image](../src/img/Network/tcp-congestion-control/bbr.png)  
+BBR 经过 StartUp 和 Drain 阶段后，进入相对平稳的发包阶段，相同时间段内 BBR的吞吐量要大于 Reno 和 BIC。 当网络传输能力提高，最佳拥塞窗口 CWND 从 30 个 MSS 提升到48 个 MSS， BIC 最少只需 5 个 RTT 即可达到最佳拥塞窗口 CWND，而 BBR 需要 7 个 RTT，拥塞窗口 CWND 才上升到 1.25\*30=37.5（取 37 个 MSS）， BBR 再经过 8 个 RTT，拥塞窗口 CWND 上升到 1.25\*37=46.25（取 46 个 MSS）。
