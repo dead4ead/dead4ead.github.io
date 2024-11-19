@@ -27,18 +27,18 @@ The following attributes are used by IKE and are negotiated as part of the ISAKM
 ### 算法计算
 四种不同的认证方式：数字签名、公钥加密的两种认证方式、预共享密钥。  
 计算SKEYID：
-- 对于数字签名：SKEYID = prf(Ni_b | Nr_b, g^xy)
-- 对于公共密钥加密：SKEYID = prf(hash(Ni_b | Nr_b), CKY-I | CKY-R)
-- 对于共享密钥：SKEYID = prf(pre-shared-key, Ni_b | Nr_b)  
+- 对于数字签名：`SKEYID = prf(Ni_b | Nr_b, g^xy)`
+- 对于公共密钥加密：`SKEYID = prf(hash(Ni_b | Nr_b), CKY-I | CKY-R)`
+- 对于共享密钥：`SKEYID = prf(pre-shared-key, Ni_b | Nr_b)`  
 
 计算密钥材料：  
-* SKEYID_d = prf(SKEYID, g^xy | CKY-I | CKY-R | 0)  
-SKEYID_a = prf(SKEYID, SKEYID_d | g^xy | CKY-I | CKY-R | 1)  
-SKEYID_e = prf(SKEYID, SKEYID_a | g^xy | CKY-I | CKY-R | 2)  
+* `SKEYID_d = prf(SKEYID, g^xy | CKY-I | CKY-R | 0)`  
+`SKEYID_a = prf(SKEYID, SKEYID_d | g^xy | CKY-I | CKY-R | 1)`  
+`SKEYID_e = prf(SKEYID, SKEYID_a | g^xy | CKY-I | CKY-R | 2)`  
 
 验证交互双方，首先计算HASH_I和HASH_R：
-- HASH_I = prf(SKEYID, g^xi | g^xr | CKY-I | CKY-R | SAi_b | IDii_b )
-- HASH_R = prf(SKEYID, g^xr | g^xi | CKY-R | CKY-I | SAi_b | IDir_b )  
+- `HASH_I = prf(SKEYID, g^xi | g^xr | CKY-I | CKY-R | SAi_b | IDii_b )`
+- `HASH_R = prf(SKEYID, g^xr | g^xi | CKY-R | CKY-I | SAi_b | IDir_b )`  
 * 对于使用数字签名，HASH_I和HASH_R是经过签名并验证；  
 * 对于使用公钥加密验证或共享密钥验证，HASH_I和HASH_R直接验证交换
 
@@ -61,7 +61,8 @@ SKEYID_e = prf(SKEYID, SKEYID_a | g^xy | CKY-I | CKY-R | 2)
         HDR, SA, KE, Ni, IDii       -->  
                                     <--    HDR, SA, KE, Nr, IDir,
                                                 [ CERT, ] SIG_R
-        HDR, [ CERT, ] SIG_I        -->  
+        HDR, [ CERT, ] SIG_I        -->
+  
 签名的数据——SIG_I或SIG_R是协商的数字签名算法分别应用到HASH_I或HASH_R所产生的结果。  
 将HASH使用私钥加密，对应SIG_I，公钥通过证书[ CERT, ]带过去。
 
@@ -131,8 +132,8 @@ SKEYID_e = prf(SKEYID, SKEYID_a | g^xy | CKY-I | CKY-R | 2)
   - Nonce：使用对方公钥加密  
   - KE、身份[以及证书]：使用对称加密算法加密，对称密钥从nonce中衍生  
   - 对称密钥Ke：
-    1. 先计算Ne_i = prf(Ni_b, CKY-I) ; Ne_r = prf(Nr_b, CKY-R)
-    2. 再计算Ke = K = K1 | K2 | K3 and K1 = prf(Ne_i, 0) ... 
+    1. 先计算`Ne_i = prf(Ni_b, CKY-I) ; Ne_r = prf(Nr_b, CKY-R)`
+    2. 再计算`Ke = K = K1 | K2 | K3 and K1 = prf(Ne_i, 0) ...` 
 
 ### 4 使用共享密钥的第一阶段协商
 - 主模式
@@ -170,13 +171,13 @@ SKEYID_e = prf(SKEYID, SKEYID_a | g^xy | CKY-I | CKY-R | 2)
                                                [, KE ] [, IDci, IDcr ]  
         HDR*, HASH(3)             -->  
 
-   HASH(1) = prf(SKEYID_a, M-ID | SA | Ni [ | KE ] [ | IDci | IDcr )  
-   HASH(2) = prf(SKEYID_a, M-ID | Ni_b | SA | Nr [ | KE ] [ | IDci | IDcr )  
-   HASH(3) = prf(SKEYID_a, 0 | M-ID | Ni_b | Nr_b)  
+   `HASH(1) = prf(SKEYID_a, M-ID | SA | Ni [ | KE ] [ | IDci | IDcr )`  
+   `HASH(2) = prf(SKEYID_a, M-ID | Ni_b | SA | Nr [ | KE ] [ | IDci | IDcr )`  
+   `HASH(3) = prf(SKEYID_a, 0 | M-ID | Ni_b | Nr_b)`  
 
 - 密钥材料计算  
-   KEYMAT = prf(SKEYID_d, protocol | SPI | Ni_b | Nr_b).  
-   KEYMAT = prf(SKEYID_d, g(qm)^xy | protocol | SPI | Ni_b | Nr_b) `[PFS]`  
+   `KEYMAT = prf(SKEYID_d, protocol | SPI | Ni_b | Nr_b).`  
+   `KEYMAT = prf(SKEYID_d, g(qm)^xy | protocol | SPI | Ni_b | Nr_b) `[PFS]``  
    [解密]InBound：OurKeymat-OurSPI  
    [加密]Outbound：PeerKeymat-PeerSPI  
 
