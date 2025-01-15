@@ -20,9 +20,10 @@ Mixing Preshared Keys in the Internet Key Exchange Protocol Version 2 (IKEv2) fo
  如果预共享密钥具有足够的熵，并且伪随机函数 (PRF)、加密和身份验证转换是量子安全的，则所得到的系统被认为是量子安全的——也就是说，可以安全地抵御当今的经典攻击者或未来的攻击者量子计算机。  
 
 IKEv1 [RFC2409], when used with strong preshared keys, is not vulnerable to quantum attacks because those keys are one of the inputs to the key derivation function.  
-IKEv1 [RFC2409] 在与强预共享密钥一起使用时不易受到量子攻击，因为这些密钥是密钥派生函数的输入之一。
-- IKEv1: SKEYID = prf(pre-shared-key, Ni_b | Nr_b)  
-- IKEv2: SKEYSEED = prf(Ni | Nr, g^ir)  
+IKEv1 [RFC2409] 在与强预共享密钥一起使用时不易受到量子攻击，因为这些密钥是密钥派生函数的输入之一。 
+
+`IKEv1: SKEYID = prf(pre-shared-key, Ni_b | Nr_b)`  
+`IKEv2: SKEYSEED = prf(Ni | Nr, g^ir) ` 
 
 IKEv2的预共享密钥不用于密钥派生，用于身份验证。
 
