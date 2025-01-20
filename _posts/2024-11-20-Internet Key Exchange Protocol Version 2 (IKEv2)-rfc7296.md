@@ -56,6 +56,7 @@ CREATE_CHILD_SA
                TSi, TSr}            -->  
         		                    <-- HDR, SK {SA, Nr, [KEr,] 
     	    						       TSi, TSr}  
+
 - USE_TRANSPORT_MODE notification MAY be included in a request message that also includes an SA payload requesting a Child SA. It requests that the Child SA use transport mode rather than tunnel mode for the SA created.传输模式随SA载荷通知，如果响应方接受则回应notification of USE_TRANSPORT_MODE。  
 
 #### Rekeying IKE SAs with the CREATE_CHILD_SA Exchange
