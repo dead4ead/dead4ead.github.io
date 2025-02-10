@@ -36,7 +36,7 @@ IKE_SA_INIT & IKE_AUTH
           [CERTREQ,] [IDr,] AUTH, 
     	  SAi2, TSi, TSr} -->
                                 <-- HDR, SK {IDr, [CERT,] AUTH, 
-        							  SAr2, TSi, TSr}
+        							SAr2, TSi, TSr}
 
 SA_INIT交换加密套件、KE、随机值。  
 AUTH中IDi声明自己的身份、可选的IDr指定与响应方哪个身份通信。
@@ -55,7 +55,7 @@ CREATE_CHILD_SA
         HDR, SK {SA, Ni, [KEi,]
                TSi, TSr}            -->  
         		                    <-- HDR, SK {SA, Nr, [KEr,] 
-    	    						       TSi, TSr}  
+    	    						    TSi, TSr}  
 
 - USE_TRANSPORT_MODE notification MAY be included in a request message that also includes an SA payload requesting a Child SA. It requests that the Child SA use transport mode rather than tunnel mode for the SA created.传输模式随SA载荷通知，如果响应方接受则回应notification of USE_TRANSPORT_MODE。  
 
@@ -64,7 +64,8 @@ CREATE_CHILD_SA
     Initiator                         Responder
     ------------------------------------------------------
     HDR, SK {SA, Ni, KEi}     -->
-                              <--  HDR, SK {SA, Nr, KEr}
+                              <--  HDR, SK {SA, Nr, KEr}  
+
 - A new initiator SPI is supplied in the SPI field of the SA payload.IKE SA重协商，使用新的SPI。  
 
 #### Rekeying Child SAs with the CREATE_CHILD_SA Exchange
@@ -75,7 +76,8 @@ CREATE_CHILD_SA
              SA, Ni, [KEi,]
                TSi, TSr}      -->
                               <--  HDR, SK {SA, Nr, [KEr,] 
-    						                 TSi, TSr}
+    						        TSi, TSr}  
+
 - The REKEY_SA notification MUST be included in a CREATE_CHILD_SA exchange if the purpose of the exchange is to replace an existing ESP or AH SA. 如果交换的目的是替换现有ESP或AH SA，则必须在创建子SA交换中包含更新SA通知。  
 
 ### The INFORMATIONAL Exchange
