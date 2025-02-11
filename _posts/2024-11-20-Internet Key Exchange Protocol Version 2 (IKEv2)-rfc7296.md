@@ -105,7 +105,12 @@ IKE_SA_INIT
 SKEYSEED = prf(Ni | Nr, g^ir)
 {SK_d | SK_ai | SK_ar | SK_ei | SK_er | SK_pi | SK_pr}
                    = prf+ (SKEYSEED, Ni | Nr | SPIi | SPIr)
-```
+```   
+- SK_d used for deriving new keys for the Child SAs established with this IKE SA;    
+- SK_ai and SK_ar used as a key to the integrity protection algorithm for authenticating the component messages of subsequent exchanges;    
+- SK_ei and SK_er used for encrypting (and of course decrypting) all subsequent exchanges;   
+- SK_pi and SK_pr, which are used when generating an AUTH payload.  
+
 ### Generating Keying Material for Child SAs
 A single Child SA is created by the IKE_AUTH exchange, and additional Child SAs can optionally be created in CREATE_CHILD_SA exchanges. 
 ```
