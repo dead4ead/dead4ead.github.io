@@ -1,6 +1,6 @@
 ---
-title: IKE-rfc2049
-description: The Internet Key Exchange (IKE)-rfc2409学习.
+title: The Internet Key Exchange (IKE)
+description: IKE-rfc2049
 author: dead4ead
 date: 2024-11-18 12:00:00 +0800
 categories: [Secure, IPSec]

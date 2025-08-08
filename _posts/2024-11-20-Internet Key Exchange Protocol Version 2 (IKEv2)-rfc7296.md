@@ -1,6 +1,6 @@
 ---
-title: IKEv2-rfc7296
-description: Internet Key Exchange Protocol Version 2 (IKEv2)学习.
+title: The Internet Key Exchange Protocol Version 2 (IKEv2)
+description: IKEv2-rfc7296
 author: dead4ead
 date: 2024-11-20 12:00:00 +0800
 categories: [Secure, IPSec]

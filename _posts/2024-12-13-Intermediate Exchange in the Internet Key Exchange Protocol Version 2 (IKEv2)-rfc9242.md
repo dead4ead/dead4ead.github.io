@@ -1,6 +1,6 @@
 ---
-title: IKEv2-rfc9242
-description: Intermediate Exchange in the Internet Key Exchange Protocol Version 2 (IKEv2)学习.
+title: Intermediate Exchange
+description: 中间交换 IKEv2-rfc9242 IKEv2
 author: dead4ead
 date: 2024-12-13 12:00:00 +0800
 categories: [Secure, IPSec]

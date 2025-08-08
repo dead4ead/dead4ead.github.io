@@ -1,6 +1,6 @@
 ---
-title: IKEv2-rfc8784
-description: Mixing Preshared Keys in the Internet Key Exchange Protocol Version 2 (IKEv2) for Post-quantum Security学习.
+title: Mixing Preshared Keys
+description: 混合预共享密钥抗量子 IKEv2-rfc8784 IKEv2
 author: dead4ead
 date: 2024-11-25 12:00:00 +0800
 categories: [Secure, IPSec]

@@ -1,6 +1,6 @@
 ---
 title: GB/T 36968-2018 信息安全技术 IPSec VPN技术规范
-description: Information security technology —Technical specification for IPSec VPN
+description: 国密主模式 IKEv1 国标
 author: dead4ead
 date: 2025-01-14 12:00:00 +0800
 categories: [Secure, IPSec]
