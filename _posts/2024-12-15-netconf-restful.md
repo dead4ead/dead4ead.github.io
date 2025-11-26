@@ -3,7 +3,7 @@ title: diff netconf-restful
 description: netconf、restful比较
 author: dead4ead
 date: 2024-12-15 12:00:00 +0800
-categories: [Netconf, RESTful]
+categories: [Configuration Management]
 tags: [Netconf, RESTful]
 #pin: true
 math: true
