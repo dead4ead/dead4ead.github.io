@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
   <diagram name="第 1 页" id="QKV-rdRZpvzflmU7z-4i">
-    <mxGraphModel dx="4271" dy="2438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3924" dy="2234" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -61,7 +61,7 @@
         <mxCell id="SK4sQwNGuHgdbQXASSQb-19" value="mac2 (16bytes)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="340" y="690" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-20" value="静态公私钥" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-20" value="静态公私钥" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry y="280" width="680" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-24" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
@@ -91,17 +91,17 @@
         <mxCell id="SK4sQwNGuHgdbQXASSQb-27" value="static key pair（S_pirv_r，S_pub_r）" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="670" y="320" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-28" value="Initiation阶段" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-28" value="Initiation阶段" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry y="380" width="680" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-27" target="SK4sQwNGuHgdbQXASSQb-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-32" value="&lt;div&gt;发起方生成发起方握手密钥&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_i&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，发送Initiation报文&lt;/span&gt;&lt;/div&gt;Generate Ephemeral E_i（生成临时密钥）:E_priv_i、E_pub_i&lt;div&gt;DH1 = DH(E_priv_i, S_pub_r)&lt;/div&gt;&lt;div&gt;DH2 = DH(S_priv_i, S_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck0 = Hash(&quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck1 = HKDF(ck0, DH1)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck2 = HKDF(ck1, DH2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;k_hs_i = HKDF(ck2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;加密：AEAD_k_hs_i(S_pub_i)&lt;/div&gt;&lt;div&gt;加密：AEAD_k_hs_i(timestamp)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-32" value="&lt;div&gt;发起方生成发起方握手密钥&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_i&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，发送Initiation报文&lt;/span&gt;&lt;/div&gt;Generate Ephemeral E_i（生成临时密钥）:E_priv_i、E_pub_i&lt;div&gt;DH1 = DH(E_priv_i, S_pub_r)&lt;/div&gt;&lt;div&gt;DH2 = DH(S_priv_i, S_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck0 = Hash(&quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck1 = HKDF(ck0, DH1)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck2 = HKDF(ck1, DH2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;&lt;b&gt;k_hs_i = HKDF(ck2)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;加密：AEAD_k_hs_i(S_pub_i)&lt;/div&gt;&lt;div&gt;加密：AEAD_k_hs_i(timestamp)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="-350" y="340" width="340" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-34" value="&lt;div&gt;S_priv_i / S_pub_i ：Initiator 静态私钥 / 公钥&lt;/div&gt;&lt;div&gt;S_priv_r / S_pub_r ：Responder 静态私钥 / 公钥&lt;/div&gt;&lt;div&gt;E_priv_i / E_pub_i ：Initiator 临时私钥 / 公钥&lt;/div&gt;&lt;div&gt;E_priv_r / E_pub_r ：Responder 临时私钥 / 公钥&lt;/div&gt;&lt;div&gt;DH(x, y) ：Curve25519 标量乘&lt;/div&gt;&lt;div&gt;HKDF(ck, input) ：链式密钥派生&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="194" y="160" width="270" height="120" as="geometry" />
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-34" value="&lt;div&gt;S_priv_i / S_pub_i ：Initiator 静态私钥 / 公钥&lt;/div&gt;&lt;div&gt;S_priv_r / S_pub_r ：Responder 静态私钥 / 公钥&lt;/div&gt;&lt;div&gt;E_priv_i / E_pub_i ：Initiator 临时私钥 / 公钥&lt;/div&gt;&lt;div&gt;E_priv_r / E_pub_r ：Responder 临时私钥 / 公钥&lt;/div&gt;&lt;div&gt;DH(x, y) ：Curve25519 标量乘&lt;/div&gt;&lt;div&gt;HKDF(ck, input) ：链式密钥派生&lt;/div&gt;&lt;div&gt;ChaCha20-Poly1305：输出ciphertext || tag&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;ciphertext = ChaCha20(plaintext) （密文）&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; tag= Poly1305( key_auth , AAD || ciphertext )&amp;nbsp; （认证标签）&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="110" width="336" height="140" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-38" value="&lt;div&gt;发起端随机生成&lt;/div&gt;&lt;div&gt;用于：&lt;/div&gt;&lt;div&gt;&amp;nbsp;标识本次握手上下文&lt;/div&gt;&lt;div&gt;&amp;nbsp;后续 Response 引用&lt;/div&gt;" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="-280" y="521" width="130" height="71" as="geometry" />
@@ -115,7 +115,7 @@
             <mxPoint x="620" y="953" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-41" value="Handshake Responder" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-41" value="Handshake Response" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="250" y="920" width="158" height="30" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-42" value="0x2(1bytes)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -142,28 +142,28 @@
         <mxCell id="SK4sQwNGuHgdbQXASSQb-49" value="mac2 (16bytes)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="1143" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-50" value="&lt;div&gt;响应方处理Initiation报文，生成发起方握手密钥&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_i&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，解密&lt;/span&gt;&lt;/div&gt;DH1 = DH(S_priv_r, E_pub_i)&lt;br&gt;&lt;div&gt;DH2 = DH(S_priv_r, S_pub_i)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck0 = Hash(&quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck1 = HKDF(ck0, DH1)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck2 = HKDF(ck1, DH2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;k_hs_i = HKDF(ck2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;解密：AEAD_k_hs_i(S_pub_i)&lt;/div&gt;&lt;div&gt;解密：AEAD_k_hs_i(timestamp)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-50" value="&lt;div&gt;响应方处理Initiation报文，生成发起方握手密钥&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_i&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，解密&lt;/span&gt;&lt;/div&gt;DH1 = DH(S_priv_r, E_pub_i)&lt;br&gt;&lt;div&gt;DH2 = DH(S_priv_r, S_pub_i)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck0 = Hash(&quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck1 = HKDF(ck0, DH1)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck2 = HKDF(ck1, DH2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;&lt;b&gt;k_hs_i = HKDF(ck2)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;解密：AEAD_k_hs_i(S_pub_i)&lt;/div&gt;&lt;div&gt;解密：AEAD_k_hs_i(timestamp)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="640" y="431" width="350" height="150" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-56" value="&lt;div style=&quot;&quot;&gt;DH(a, bG) = DH(b, aG)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;双方计算的DH1、2、3、4都相等&lt;/div&gt;&lt;div style=&quot;&quot;&gt;ck4也相等&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="225" y="1293" width="190" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-57" value="&lt;div&gt;响应方生成响应方握手密钥，发送Response报文&lt;/div&gt;Generate Ephemeral E_r（生成临时密钥）:E_priv_r、E_pub_r&lt;div&gt;DH3 = DH(E_priv_r, E_pub_i)&lt;/div&gt;&lt;div&gt;DH4 = DH(E_priv_r, S_pub_i)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck3 = HKDF(ck2, DH3)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck4 = HKDF(ck3, DH4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;k_hs_r = HKDF(ck4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;加密：AEAD_k_hs_r(empty)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-57" value="&lt;div&gt;响应方生成响应方握手密钥，发送Response报文&lt;/div&gt;Generate Ephemeral E_r（生成临时密钥）:E_priv_r、E_pub_r&lt;div&gt;DH3 = DH(E_priv_r, E_pub_i)&lt;/div&gt;&lt;div&gt;DH4 = DH(E_priv_r, S_pub_i)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck3 = HKDF(ck2, DH3)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck4 = HKDF(ck3, DH4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;&lt;b&gt;k_hs_r = HKDF(ck4)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;加密：AEAD_k_hs_r(empty)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="630" y="868" width="350" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-58" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;发起方处理Response报文，生成响应方握手密钥&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_r&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，解密&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;DH3 = DH(E_priv_i, E_pub_r)&lt;br&gt;&lt;div&gt;DH4 = DH(S_priv_i, E_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck3 = HKDF(ck2, DH3)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck4 = HKDF(ck3, DH4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;k_hs_r = HKDF(ck4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;解密：AEAD_k_hs_i(empty)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-58" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;发起方处理Response报文，生成响应方握手密钥&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k_hs_r&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;，解密&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;DH3 = DH(E_priv_i, E_pub_r)&lt;br&gt;&lt;div&gt;DH4 = DH(S_priv_i, E_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck3 = HKDF(ck2, DH3)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ck4 = HKDF(ck3, DH4)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;&lt;b&gt;k_hs_r = HKDF(ck4)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;解密：AEAD_k_hs_i(empty)&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="-290" y="983" width="340" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-59" value="会话密钥派生" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-59" value="会话密钥派生" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry y="1213" width="680" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-61" value="{K_tx_i, K_rx_i} = HKDF(ck4)" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=15;" parent="1" vertex="1">
-          <mxGeometry x="80" y="1253" width="200" height="40" as="geometry" />
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-61" value="{K_tx_i, K_rx_i} = HKDF(ck4)" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#CC0000;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="80" y="1253" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-62" value="{K_tx_r, K_rx_r} = HKDF(ck4)" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=15;" parent="1" vertex="1">
-          <mxGeometry x="400" y="1253" width="200" height="40" as="geometry" />
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-62" value="{K_tx_r, K_rx_r} = HKDF(ck4)" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#CC0000;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="400" y="1253" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-66" value="K_tx_i = K_rx_r&lt;div&gt;K_rx_i = K_tx_r&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=18;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-66" value="K_tx_i = K_rx_r&lt;div&gt;K_rx_i = K_tx_r&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=18;fontColor=#CC0000;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="220" y="1353" width="200" height="70" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-68" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-14" target="SK4sQwNGuHgdbQXASSQb-38" edge="1">
@@ -181,7 +181,7 @@
             <mxPoint x="140" y="629.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-70" value="数据报文" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-70" value="数据报文" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry y="1453" width="680" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-71" value="0x4(1bytes)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -217,7 +217,7 @@
             <mxPoint x="-430" y="1083" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SK4sQwNGuHgdbQXASSQb-84" value="&lt;div&gt;ProtocolName = &quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;&lt;br&gt;&lt;/div&gt;h = BLAKE2s(ProtocolName)&amp;nbsp; &amp;gt;&amp;gt;&amp;nbsp; 协议标识&lt;div&gt;h = BLAKE2s(h || S_pub_r)&amp;nbsp; &amp;gt;&amp;gt; Responder 静态公钥&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || E_pub_i) &amp;gt;&amp;gt; Inittiation 临时公钥&lt;br&gt;&lt;/div&gt;&lt;div&gt;ciphertext = AEAD(k_hs_i, nonce=0, aad=h, plaintext=S_pub_i&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(32bytes)&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;encrypted_static&lt;/font&gt;&amp;nbsp; =&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ciphertext &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(32B 密文 + 16B tag)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || ciphertext)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ciphertext2 = AEAD(k2, nonce=0, aad=h, plaintext=timestamp&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(12bytes)&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;encrypted_timestamp&lt;/font&gt; =&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ciphertext2&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(12B 密文 + 16B tag)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || ciphertext2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="SK4sQwNGuHgdbQXASSQb-84" value="&lt;div&gt;ProtocolName = &quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;&lt;br&gt;&lt;/div&gt;h = BLAKE2s(ProtocolName)&amp;nbsp; &amp;gt;&amp;gt;&amp;nbsp; 协议标识&lt;div&gt;h = BLAKE2s(h || S_pub_r)&amp;nbsp; &amp;gt;&amp;gt; Responder 静态公钥&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || E_pub_i) &amp;gt;&amp;gt; Inittiation 临时公钥&lt;br&gt;&lt;/div&gt;&lt;div&gt;ciphertext = AEAD(k_hs_i, nonce=0, aad=h, plaintext=S_pub_i&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(32bytes)&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;encrypted_static&lt;/font&gt;&amp;nbsp; =&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ciphertext &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(32B 密文 + 16B tag)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || ciphertext)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ciphertext2 = AEAD(k_hs_i, nonce=0, aad=h, plaintext=timestamp&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(12bytes)&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;encrypted_timestamp&lt;/font&gt; =&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ciphertext2&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(12B 密文 + 16B tag)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || ciphertext2)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-610" y="600" width="410" height="180" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-85" value="&lt;div&gt;ProtocolName = &quot;Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s&quot;&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(ProtocolName)&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || S_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || E_pub_i)&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || encrypted_static)&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || encrypted_timestamp)&lt;br&gt;&lt;/div&gt;&lt;div&gt;以上还原发起方的h&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;h = BLAKE2s(h || E_pub_r)&lt;br&gt;&lt;/div&gt;&lt;div&gt;ciphertext3 = AEAD(k_hs_r, nonce=0, aad=h, plaintext=&quot;&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;color: rgb(204, 0, 0);&quot;&gt;encrypted_nothing&lt;/font&gt; =&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ciphertext3&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(0B 密文 + 16B tag)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;h = BLAKE2s(h || ciphertext3)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -275,141 +275,141 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-104" value="&lt;div&gt;&lt;span class=&quot;fontstyle0&quot;&gt;Initiator&lt;/span&gt;&lt;br style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; line-height: normal; text-align: -webkit-auto; text-size-adjust: auto;&quot;&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-60" y="-110" width="120" height="40" as="geometry" />
+          <mxGeometry x="-71" y="-169" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-105" value="&lt;span class=&quot;fontstyle0&quot;&gt;Responder&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="180" y="-110" width="120" height="40" as="geometry" />
+          <mxGeometry x="169" y="-169" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-110" value="&lt;div&gt;&lt;span class=&quot;fontstyle0&quot;&gt;Initiator&lt;/span&gt;&lt;br style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; line-height: normal; text-align: -webkit-auto; text-size-adjust: auto;&quot;&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-60" y="50" width="120" height="40" as="geometry" />
+          <mxGeometry x="-71" y="-9" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-111" value="&lt;span class=&quot;fontstyle0&quot;&gt;Responder&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="180" y="50" width="120" height="40" as="geometry" />
+          <mxGeometry x="169" y="-9" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-117" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-111" target="SK4sQwNGuHgdbQXASSQb-105" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-130" y="80" as="sourcePoint" />
-            <mxPoint x="-80" y="30" as="targetPoint" />
+            <mxPoint x="-141" y="21" as="sourcePoint" />
+            <mxPoint x="-91" y="-29" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-118" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-110" target="SK4sQwNGuHgdbQXASSQb-104" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-130" y="80" as="sourcePoint" />
-            <mxPoint x="-80" y="30" as="targetPoint" />
+            <mxPoint x="-141" y="21" as="sourcePoint" />
+            <mxPoint x="-91" y="-29" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-119" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint y="-50" as="sourcePoint" />
-            <mxPoint x="240" y="-50" as="targetPoint" />
+            <mxPoint x="-11" y="-109" as="sourcePoint" />
+            <mxPoint x="229" y="-109" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-120" value="Handshake Initiation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="-70" width="158" height="20" as="geometry" />
+          <mxGeometry x="39" y="-129" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-123" value="Handshake Response" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="-40" width="158" height="20" as="geometry" />
+          <mxGeometry x="39" y="-99" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-124" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="240" y="-20" as="sourcePoint" />
-            <mxPoint y="-20" as="targetPoint" />
+            <mxPoint x="229" y="-79" as="sourcePoint" />
+            <mxPoint x="-11" y="-79" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-126" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint y="10" as="sourcePoint" />
-            <mxPoint x="240" y="10" as="targetPoint" />
+            <mxPoint x="-11" y="-49" as="sourcePoint" />
+            <mxPoint x="229" y="-49" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-127" value="Transport Data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="-10" width="158" height="20" as="geometry" />
+          <mxGeometry x="39" y="-69" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-128" value="Transport Data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="20" width="158" height="20" as="geometry" />
+          <mxGeometry x="39" y="-39" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-129" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="240" y="40" as="sourcePoint" />
-            <mxPoint y="40" as="targetPoint" />
+            <mxPoint x="229" y="-19" as="sourcePoint" />
+            <mxPoint x="-11" y="-19" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-130" value="&lt;div&gt;&lt;span class=&quot;fontstyle0&quot;&gt;Initiator&lt;/span&gt;&lt;br style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; line-height: normal; text-align: -webkit-auto; text-size-adjust: auto;&quot;&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="-131" width="120" height="40" as="geometry" />
+          <mxGeometry x="369" y="-190" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-131" value="&lt;span class=&quot;fontstyle0&quot;&gt;Responder&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="620" y="-131" width="120" height="40" as="geometry" />
+          <mxGeometry x="609" y="-190" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-132" value="&lt;div&gt;&lt;span class=&quot;fontstyle0&quot;&gt;Initiator&lt;/span&gt;&lt;br style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; line-height: normal; text-align: -webkit-auto; text-size-adjust: auto;&quot;&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="91" width="120" height="40" as="geometry" />
+          <mxGeometry x="369" y="32" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-133" value="&lt;span class=&quot;fontstyle0&quot;&gt;Responder&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="620" y="91" width="120" height="40" as="geometry" />
+          <mxGeometry x="609" y="32" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-134" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-133" target="SK4sQwNGuHgdbQXASSQb-131" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="310" y="59" as="sourcePoint" />
-            <mxPoint x="360" y="9" as="targetPoint" />
+            <mxPoint x="299" as="sourcePoint" />
+            <mxPoint x="349" y="-50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-135" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="SK4sQwNGuHgdbQXASSQb-132" target="SK4sQwNGuHgdbQXASSQb-130" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="310" y="59" as="sourcePoint" />
-            <mxPoint x="360" y="9" as="targetPoint" />
+            <mxPoint x="299" as="sourcePoint" />
+            <mxPoint x="349" y="-50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-136" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="440" y="-71" as="sourcePoint" />
-            <mxPoint x="680" y="-71" as="targetPoint" />
+            <mxPoint x="429" y="-130" as="sourcePoint" />
+            <mxPoint x="669" y="-130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-137" value="Handshake Initiation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="-91" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" y="-150" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-138" value="Cookie Reply" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="-61" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" y="-120" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-139" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="680" y="-41" as="sourcePoint" />
-            <mxPoint x="440" y="-41" as="targetPoint" />
+            <mxPoint x="669" y="-100" as="sourcePoint" />
+            <mxPoint x="429" y="-100" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-140" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="440" y="49" as="sourcePoint" />
-            <mxPoint x="680" y="49" as="targetPoint" />
+            <mxPoint x="429" y="-10" as="sourcePoint" />
+            <mxPoint x="669" y="-10" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-141" value="Transport Data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="29" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" y="-30" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-142" value="Transport Data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="59" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-143" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="680" y="79" as="sourcePoint" />
-            <mxPoint x="440" y="79" as="targetPoint" />
+            <mxPoint x="669" y="20" as="sourcePoint" />
+            <mxPoint x="429" y="20" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-147" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="440" y="-11" as="sourcePoint" />
-            <mxPoint x="680" y="-11" as="targetPoint" />
+            <mxPoint x="429" y="-70" as="sourcePoint" />
+            <mxPoint x="669" y="-70" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-148" value="Handshake Initiation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="-31" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" y="-90" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-149" value="Handshake Response" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="490" y="-1" width="158" height="20" as="geometry" />
+          <mxGeometry x="479" y="-60" width="158" height="20" as="geometry" />
         </mxCell>
         <mxCell id="SK4sQwNGuHgdbQXASSQb-150" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="680" y="19" as="sourcePoint" />
-            <mxPoint x="440" y="19" as="targetPoint" />
+            <mxPoint x="669" y="-40" as="sourcePoint" />
+            <mxPoint x="429" y="-40" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
