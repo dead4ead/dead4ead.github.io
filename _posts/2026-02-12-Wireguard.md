@@ -98,22 +98,43 @@ ck4 = HKDF(ck3, DH4)
 
 ### h（handshake_hash）的作用
 ```
-ProtocolName = "Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s"
-h = BLAKE2s(ProtocolName)  >>  协议标识
-h = BLAKE2s(h || S_pub_r)  >> Responder 静态公钥
-h = BLAKE2s(h || E_pub_i) >> Inittiation 临时公钥
-ciphertext = AEAD(k_hs_i, nonce=0, aad=h, plaintext=S_pub_i(32bytes))
+====Handshake Initiation报文
+CONSTRUCTION = "Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s"
+IDENTIFIER = "WireGuard v1 zx2c4 Jason@zx2c4.com"
+C_i := HASH(CONSTRUCTION)
+H_i := HASH(C_i || IDENTIFIER)
+H_i := HASH(H_i || S_pub_r)  >> R静态公钥
+C_i = KDF1(C_i, E_pub_i)
+H_i := HASH(H_i || msg.ephemeral) = HASH(H_i || E_pub_i) >> I临时公钥
+C_i,k = KDF2(C_i, DH1)
+ciphertext = AEAD(k, nonce=0, aad=H_i, plaintext=S_pub_i(32bytes))>>I静态公钥
 encrypted_static  =  ciphertext (32B 密文 + 16B tag)
-h = BLAKE2s(h || ciphertext)
-ciphertext2 = AEAD(k_hs_i, nonce=0, aad=h, plaintext=timestamp(12bytes))
+H_i := (H_i ||encrypted_static)
+
+C_i,k = KDF2(C_i, DH2)
+ciphertext2 = AEAD(k, nonce=0, aad=H_i , plaintext=timestamp(12bytes))
 encrypted_timestamp = ciphertext2  (12B 密文 + 16B tag)
-h = BLAKE2s(h || ciphertext2)
+H_i := (H_i ||encrypted_timestamp )
+
+====Handshake Response报文
+C_r = KDF1(C_r, E_pub_r) >> R临时公钥
+H_r := HASH(H_r || msg.ephemeral) = HASH(H_r || E_pub_r) >> R临时公钥
+C_r,k = KDF1(C_r, DH3)
+C_r,k = KDF1(C_r, DH4)
+(C_r, τ, k) := KDF3(C_r, Q)  >>预共享密钥
+H_r := HASH(H_r || τ)
+
+ciphertext3 = AEAD(k, nonce=0, aad=H_r, plaintext="")
+encrypted_nothing = ciphertext3  (0B 密文 + 16B tag)
+H_r = HASH(H_r || encrypted_nothing)
+
 ```
 #### 绑定握手上下文
-* 绑定 E_pub_i
+* 绑定 E_pub_i S_pub_r S_pub_i
 * 绑定 E_pub_r
 * 绑定 encrypted_static
 * 绑定 encrypted_timestamp
+* 绑定 encrypted_nothing
 
 防止：
 * 报文重排序
@@ -156,9 +177,13 @@ mac1 = BLAKE2s(key = BLAKE2s("mac1----" || S_pub_receiver) ,data = msg(整个握
 
 #### MAC2（cookie）
 ```
-mac2_key = cookie_secret (周期轮换)
-cookie = BLAKE2s(key = mac2_key,data = sip||sport)
-mac2 = BLAKE2s(key = cookie,data = msg(整个握手报文))[0:16]
+Responder：
+mac2_key = cookie_secret (周期轮换, 2mins)
+τ = MAC(key = mac2_key,data = sip||sport)
+encrypted_cookie = XAead(HASH("cookie--" || S_pub_receiver),nonce,τ, mac1) 
+
+Initiator：
+mac2 = MAC(key = cookie,data = msg(整个握手报文))[0:16]
 ```
 用于：
 * 抗 DoS
