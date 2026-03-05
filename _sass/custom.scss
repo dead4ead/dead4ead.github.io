@@ -1,0 +1,25 @@
+/* TOC 全部展开 */
+.toc {
+  ul {
+    max-height: none !important;
+    display: block !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+}
+
+.toc-entry {
+  display: block !important;
+  
+  > ul {
+    display: block !important;
+    max-height: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* 禁用动画以防止折叠 */
+.toc ul li > ul {
+  animation: none !important;
+  transition: none !important;
+}
